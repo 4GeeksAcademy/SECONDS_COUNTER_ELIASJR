@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Foldit:wght@100..900&family=Kalnia+Glaze:wdth,wght@118,333&family=Modern+Antiqua&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Maps&family=Rubik+Moonrocks&display=swap');
+
 /* BOTONES */
 *, *:after, *:before {
   box-sizing: border-box;
+  font-family: "Kalnia Glaze", serif;
 }
 
 :root {
@@ -94,7 +97,7 @@ button::after {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 5px;
 }
 
@@ -105,13 +108,19 @@ input {
   color: white;
   font-size: 20px;
   text-indent: 10px;
-  border-radius: 10px;
+  border-radius: 35px;
   outline: none;
-  background: none;
+  background: rgba(59, 59, 59, 0.192);
   border: rgb(128, 128, 128);
   border-width: 1px;
   letter-spacing: 3px;
   transition: .4s;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input:focus {

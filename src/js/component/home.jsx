@@ -1,11 +1,9 @@
 import React from "react";
 import SecondsCounter from "./secondscounter.jsx";
-//include images into your bundle
 import logo from "../../img/logo.png";
 import icon2 from "../../img/icon.png";
 
 
-//create your first component
 const Home = () => {
 	return (
 		<div className="container-fluid text-center text-light p-2">

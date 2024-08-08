@@ -11,11 +11,12 @@ function SecondsCounter() {
   const iniciarTemporizador = () => {
     setIsRunning(true);
     const id = setInterval(() => {
-      if (tiempoRestante > 0) {
-        setContador((prevCount) => prevCount + 1);
-        setTiempoRestante((prevTime) => prevTime - 1);
-      } else {
+      if (tiempoRestante === 1) {
+        alert("¡¡ TIME OVER !!");
         clearInterval(id);
+      } else if (tiempoRestante > 0) {
+        setTiempoRestante((prevTime) => prevTime - 1);
+        setContador((prevCount) => Math.max(prevCount - 1, 0));
       }
     }, 1000);
     setTimerId(id);
@@ -28,7 +29,7 @@ function SecondsCounter() {
 
   const reiniciarTemporizador = () => {
     pausarTemporizador();
-    setContador(0);
+    setContador(tiempoEspecifico);
     setTiempoRestante(tiempoEspecifico);
     setIsRunning(false);
   };
@@ -56,20 +57,19 @@ function SecondsCounter() {
   }, [tiempoEspecifico]);
 
   const contadorFormateado = contador.toString().padStart(6, '0');
-
   const digitos = contadorFormateado.split('').map((digito, index) => (
     <span className="digito" key={index}>{digito}</span>
   ));
 
   return (
-    <div className="container mt-5" style={{minWidth: "500px"}}>
+    <div className="container mt-5" style={{ minWidth: "500px" }}>
       <div className="buttonsContainer mb-4">
         <button className="btn" style={{ borderRadius: '15px', marginRight: '10px' }} onClick={iniciarTemporizador}><span>START</span></button>
         <button className="btn" style={{ borderRadius: '15px', marginRight: '10px' }} onClick={pausarTemporizador}><span>PAUSE</span></button>
-        <button className="btn" style={{ borderRadius: '15px', marginRight: '10px' }} onClick={reiniciarTemporizador}><span>RESTART</span></button>
         <button className="btn" style={{ borderRadius: '15px' }} onClick={reanudarTemporizador}><span>CONTINUE</span></button>
+        <button className="btn" style={{ borderRadius: '15px', marginRight: '10px' }} onClick={reiniciarTemporizador}><span>RESTART</span></button>
       </div>
-      <input className="inputButton mb-5"  type="text" placeholder="Enter a number" onChange={(e) => setTiempoEspecifico(Number(e.target.value))}/>
+      <input className="inputButton mb-5" type="number" placeholder="Enter a number" onChange={(e) => setTiempoEspecifico(Number(e.target.value))}/>
       <h1>
         <img src={icon} alt="" />
         {digitos}
