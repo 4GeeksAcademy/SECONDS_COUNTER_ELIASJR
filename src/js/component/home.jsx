@@ -9,8 +9,8 @@ import icon2 from "../../img/icon.png";
 const Home = () => {
 	return (
 		<div className="container-fluid text-center text-light p-2">
-			<div className="box mt-1 mb-5">
-			<h1 className="text text-center mt-3 mb-3"><span>SECONDS COUNTER</span></h1>
+			<div className="box mt-2 mb-3">
+			<h1 className="text text-center mt-2 mb-3"><span>SECONDS COUNTER</span></h1>
 			</div>
 			<p><img className="logo mt-1 mb-1" src={logo} style={{width:"100px"}}/></p>
 			<SecondsCounter />

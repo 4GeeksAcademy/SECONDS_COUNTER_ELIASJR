@@ -62,14 +62,14 @@ function SecondsCounter() {
   ));
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" style={{minWidth: "500px"}}>
       <div className="buttonsContainer mb-4">
         <button className="btn" style={{ borderRadius: '15px', marginRight: '10px' }} onClick={iniciarTemporizador}><span>START</span></button>
         <button className="btn" style={{ borderRadius: '15px', marginRight: '10px' }} onClick={pausarTemporizador}><span>PAUSE</span></button>
         <button className="btn" style={{ borderRadius: '15px', marginRight: '10px' }} onClick={reiniciarTemporizador}><span>RESTART</span></button>
         <button className="btn" style={{ borderRadius: '15px' }} onClick={reanudarTemporizador}><span>CONTINUE</span></button>
       </div>
-      <input className="inputButton mb-5"  type="text" placeholder="Introduce un número" onChange={(e) => setTiempoEspecifico(Number(e.target.value))}/>
+      <input className="inputButton mb-5"  type="text" placeholder="Enter a number" onChange={(e) => setTiempoEspecifico(Number(e.target.value))}/>
       <h1>
         <img src={icon} alt="" />
         {digitos}
